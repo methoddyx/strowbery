@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.scare-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: #000000;
+}
+
+.scare-overlay.active {
+  z-index: 1000;
+  opacity: 1;
+}
+
+video#scare-video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+.image-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 15px;
+  border: 3px solid #ff3366;
+  box-shadow: 0 0 40px rgba(255, 51, 102, 0.6);
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  color: #ff3366;
+  text-shadow: 0 0 15px rgba(255, 51, 102, 0.8);
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #ff99aa;
+  font-weight: 500;
+}
+
+.get-btn {
+  background: linear-gradient(45deg, #ff3366, #ff6699);
+  color: white;
+  padding: 22px 60px;
+  font-size: 2rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 30px rgba(255, 51, 102, 0.7);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.get-btn:hover {
+  background: linear-gradient(45deg, #ff6699, #ff3366);
+  box-shadow: 0 0 40px rgba(255, 51, 102, 0.9);
+  transform: scale(1.05);
+}
+
+.get-btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .get-btn {
+    padding: 18px 40px;
+    font-size: 1.6rem;
+  }
+  
+  .main-image {
+    max-width: 350px;
+  }
+}
